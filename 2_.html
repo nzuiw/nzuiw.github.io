@@ -30,6 +30,7 @@
 
 <body style = "background-color:#e6ffff;"><center>
   <h1> <a href="index.html"> NZ: WELCOME </a> </h1>
+  <!--
   <input type="button" value="야간모드,," onclick="
     document.querySelector('body').style.backgroundColor = 'black';
     document.querySelector('body').style.color = 'white';
@@ -38,13 +39,42 @@
     document.querySelector('body').style.backgroundColor = '#e6ffff';
     document.querySelector('body').style.color = 'black';
   ">
+  -->
+
+  <!--조건문-->
+  <input id="night_day" type="button" value="night" onclick="
+    if(document.querySelector('#night_day').value == 'night'){
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';
+      document.querySelector('#night_day').value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+      }
+    }
+    else{
+      document.querySelector('body').style.backgroundColor = '#e6ffff';
+      document.querySelector('body').style.color = 'black';
+      document.querySelector('#night_day').value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+  }
+  ">
 
 <!--게시판 목차 -->
 
-  <li> <a href="1.html">소개글 </a></li>
-  <li> <a href="2.html">게시판 </a></li>
-  <li> <a href="toon.html">그림판 </a></li>
-  <li> <a href="3.html">방명록 </a></li>
+  <li> <a href="1.html">소개글 </a>
+  <a href="2.html">게시판 </a>
+  <a href="toon.html">그림판 </a>
+  <a href="3.html">방명록 </a></li>
 
 
   <h2 style = "color:blue; background-color: orange;"> 연습하는 페이지다 </h2>
@@ -67,6 +97,22 @@
   <p> <span class="note">안녕!</span>하세요. <span class = "hi">안녕!</span>하슈 <span class = "hi">
   <h1>My <span class="note">Important</span> Heading</h1>
   <p>This is some <span class="js">important</span> text. <span class="note">important</span> is <span class="note">important</span></p>
+
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value == 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+  }
+    else{
+      target.style.backgroundColor = '#e6ffff';
+      target.style.color = 'black';
+      this.value = 'night';
+  }
+  ">
+  <!---->
+  <!--ctrl + d 한 번에 여러 개 선택 가능-->
 
 </center>
 </body>
