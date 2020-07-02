@@ -2,22 +2,61 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>연습 - 함수</title>
   </head>
   <body>
-    <h1>Loor & Array</h1>
-    <script>
-      var friends = ['hyejin', 'solmi', 'hansol', 'seunghee', 'minju'];
-    </script>
-    <h2>Friends</h2>
+    <h2>basic</h2>
     <ul>
       <script>
-        var i =0;
-        while(i < friends.length){
-          document.write('<li>'+friends[i]+'</li>');
-          i = i+1; //주석 이거 되넴
+        function two(){
+          document.write('<li>2-1</li>');
+          document.write('<li>2-2</li>');
         }
+
+        document.write('<li>1</li>');
+        two();
+        document.write('<li>3</li>');
+        two();
       </script>
     </ul>
+    <h2>parameter & argument</h2>
+    <script>
+      function onePlusOne(){
+        document.write(1+1+'<br>');
+      }
+      onePlusOne();
+      function sum(left, right){
+        document.write(left + right + '<br>');
+      }
+      function sumColorRed(left, right){
+        document.write('<div style = "color:red">'+ left + right + '</div><br>');
+      }
+      sum(2, 3); //5
+      sumColorRed(2, 3); //5
+      sum(3, 4); //7
+    </script>
+    <h2>return</h2>
+    <script>
+      function sum2(left, right){
+        return left+right;
+      }
+      document.write(sum2(2, 3)+'<br>');
+      document.write('<div style = "color:red">'+sum2(2, 3)+'</div>');
+
+    </script>
+    <h2>object</h2>
+    <h2>creates</h2>
+    <script>
+      var coworkers = {
+        "programmer":"egoing",
+        "designer":"leeache"
+      }; //객체는 {} 배열은 []
+      document.write("pro:" + coworkers.programmer+"<br>");
+      document.write("des :" + coworkers.designer+"<br>");
+      coworkers.bookkeeper = "duru";
+      document.write("book :" + coworkers.bookkeeper+"<br>");
+      coworkers["data scientist"] = "taeho";
+      document.write("data :" + coworkers["data scientist"]+"<br>");
+    </script>
   </body>
 </html>

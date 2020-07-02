@@ -3,6 +3,39 @@
 <head>
   <title> NZ : WELCOME </title>
   <meta charset="utf-8">
+  <script>
+  function LinksSetColor(color){
+    var alist = document.querySelectorAll('a');
+    var i=0;
+    while(i < alist.length){
+      alist[i].style.color = color;
+      i = i + 1;
+    }
+  }
+  function BodySetColor(color){
+    document.querySelector('body').style.color = color;
+  }
+  function BodySetBackgroundColor(color){
+    document.querySelector('body').style.backgroundColor = color;
+  }
+
+  function nightDayHandler(self){
+    var target = document.querySelector('body');
+    if(self.value == 'night'){  //this는 input버튼 가르키는게 아니라 전역변수 되어버림
+      Body.setBackgroundColor('black');
+      Body.setColor('white');
+      body.linksSetColor('powderblue'); //?
+      self.value = 'day';
+
+    }
+    else{
+      Body.SetBackgroundColor('powderblue');
+      Body.SetColor('black');
+      body.linksSetColor('blue');  //?
+      self.value = 'night';
+    }
+  }
+  </script>
   <style>
     .js {
       font-weight: bold;
@@ -43,32 +76,34 @@
 
   <!--조건문-->
   <input id="night_day" type="button" value="night" onclick="
-    if(document.querySelector('#night_day').value == 'night'){
-      document.querySelector('body').style.backgroundColor = 'black';
-      document.querySelector('body').style.color = 'white';
-      document.querySelector('#night_day').value = 'day';
+    nightDayHandler(this);">
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-          alist[i].style.color = 'powderblue';
-          i = i + 1;
-      }
-    }
-    else{
-      document.querySelector('body').style.backgroundColor = '#e6ffff';
-      document.querySelector('body').style.color = 'black';
-      document.querySelector('#night_day').value = 'night';
+<!--
+if(document.querySelector('#night_day').value == 'night'){
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  document.querySelector('#night_day').value = 'day';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-          alist[i].style.color = 'blue';
-          i = i + 1;
-        }
+  var alist = document.querySelectorAll('a');
+  var i = 0;
+  while(i < alist.length){
+      alist[i].style.color = 'powderblue';
+      i = i + 1;
   }
-  ">
+}
+else{
+  document.querySelector('body').style.backgroundColor = '#e6ffff';
+  document.querySelector('body').style.color = 'black';
+  document.querySelector('#night_day').value = 'night';
 
+  var alist = document.querySelectorAll('a');
+  var i = 0;
+  while(i < alist.length){
+      alist[i].style.color = 'blue';
+      i = i + 1;
+    }
+}
+-->
 <!--게시판 목차 -->
 
   <li> <a href="1.html">소개글 </a>
