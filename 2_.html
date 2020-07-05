@@ -4,34 +4,51 @@
   <title> NZ : WELCOME </title>
   <meta charset="utf-8">
   <script>
-  function LinksSetColor(color){
-    var alist = document.querySelectorAll('a');
-    var i=0;
-    while(i < alist.length){
-      alist[i].style.color = color;
-      i = i + 1;
+
+  var Links = {
+    setColor:function(color){
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i < alist.length){
+        alist[i].style.color = color;
+        i = i + 1;
+      }
     }
   }
-  function BodySetColor(color){
-    document.querySelector('body').style.color = color;
-  }
-  function BodySetBackgroundColor(color){
-    document.querySelector('body').style.backgroundColor = color;
+
+  var Body = {
+    setColor: function(color){
+      document.querySelector('body').style.color = color;
+    }, //함수이면서 객체 소속 = 메소드
+    //다큐멘트 = 객체, 쿼리셋컬러 = 함수이면서 객체 소속 = 메소드
+    setBackgroundColor:function(color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
   }
 
+
+
   function nightDayHandler(self){
+    function BodySetColor(color){
+      document.querySelector('body').style.color = color;
+    }
+    function BodySetBackgroundColor(color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
+
+
     var target = document.querySelector('body');
     if(self.value == 'night'){  //this는 input버튼 가르키는게 아니라 전역변수 되어버림
       Body.setBackgroundColor('black');
       Body.setColor('white');
-      body.linksSetColor('powderblue'); //?
+      Links.setColor('powderblue'); //?
       self.value = 'day';
 
     }
     else{
-      Body.SetBackgroundColor('powderblue');
-      Body.SetColor('black');
-      body.linksSetColor('blue');  //?
+      Body.setBackgroundColor('powderblue');
+      Body.setColor('black');
+      Links.setColor('blue');  //?
       self.value = 'night';
     }
   }

@@ -51,12 +51,31 @@
         "programmer":"egoing",
         "designer":"leeache"
       }; //객체는 {} 배열은 []
-      document.write("pro:" + coworkers.programmer+"<br>");
-      document.write("des :" + coworkers.designer+"<br>");
+      document.write("programmer : " + coworkers.programmer+"<br>");
+      document.write("designer : " + coworkers.designer+"<br>");
       coworkers.bookkeeper = "duru";
-      document.write("book :" + coworkers.bookkeeper+"<br>");
+      document.write("bookkeeper : " + coworkers.bookkeeper+"<br>");
       coworkers["data scientist"] = "taeho";
-      document.write("data :" + coworkers["data scientist"]+"<br>");
+      document.write("data scientist : " + coworkers["data scientist"]+"<br>");
+    </script>
+
+    <h2>iterate</h2>
+    <script>
+      for(var key in coworkers){
+        document.write(key + " : " + coworkers[key] + '<br>');
+      }
+    </script>
+    <h2>property & method</h2>
+    <script>
+      //객체에 함수도 넣을 수 있다(showAll)
+      coworkers.showAll = function(){
+        for(var key in this){
+          document.write(key+' : '+this[key]+'<br>');
+        }
+      }
+      coworkers.showAll();
+
+
     </script>
   </body>
 </html>
