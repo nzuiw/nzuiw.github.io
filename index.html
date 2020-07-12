@@ -4,16 +4,19 @@
   <!-- 웹사이트 이름 -->
   <title> NZ : WELCOME </title>
   <meta charset="utf-8">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="colors.js"> </script>
 
   <!-- GOOGLE AMALYSTICS -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170155260-1"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170155260-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-170155260-1');
-  </script>
+  </script> -->
 
 </head>
 
@@ -22,6 +25,8 @@
 <body style = "background-color:#99b3ff">
 <center>
   <h1>  <a href="index.html"> NZ: WELCOME </a> </h1>
+  <input id="night_day" type="button" value="night" onclick="
+    nightDayHandler(this);">
 
   <!--게시판 목차 -->
 
@@ -36,7 +41,6 @@
 
     <a href="#"><img src="https://user-images.githubusercontent.com/66854795/84556953-9ca95f00-ad61-11ea-81f7-8dcec009a8a0.JPG"
     width="400px" alt="sample image"></a>
-
 
 
     <!-- <p style="margin-top:40px;"></p>
